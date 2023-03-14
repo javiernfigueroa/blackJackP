@@ -9,7 +9,7 @@
     background-image: url(/img/black.jpg);
     background-size: cover;
     width: 500px;
-    height: 350px;
+    height: 390px;
     margin: 0 auto 0 auto;
     border: 10px solid black;
     border-radius: 20px;
@@ -29,6 +29,7 @@
 .start-btn {
     color: #016f32;
     width: 150px;
+    height: 90px;
     background-color: goldenrod;
     font-family: 'Rye', cursive;
     border: none;

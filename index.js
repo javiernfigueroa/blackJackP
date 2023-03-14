@@ -1,26 +1,46 @@
-let firstCard = 3;
-let secondCard = 6;
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard;
+let player = {
+    name: "Javier",
+    chips: 145
+}
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
-const HEADER_TEXT = document.getElementById("message-el")
-const SUM_ELE = document.querySelector("#sum-el")
-const CARDS_ELE = document.querySelector("#cards-el")
+const HEADER_TEXT = document.getElementById("message-el");
+const SUM_ELE = document.querySelector("#sum-el");
+const CARDS_ELE = document.querySelector("#cards-el");
+const START_BTN = document.querySelector(".start-btn");
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard() {
-    
+  let randomNumber = Math.floor(Math.random() * 13) + 1;
+  if (randomNumber > 10) {
+    return 10;
+  } else if (randomNumber === 1) {
+    return 11;
+  } else {
+    return randomNumber;
+  }
 }
 
 function startGame() {
-    renderGame();
+  START_BTN.innerText = "PARTIDA EN CURSO";
+  cards = [];
+  isAlive = true;
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
+  cards.push(firstCard);
+  cards.push(secondCard);
+  sum = firstCard + secondCard;
+  renderGame();
 }
 
 function renderGame() {
-  CARDS_ELE.innerText = 'Tus cartas: ';
-  for(let i = 0; i < cards.length; i++) {
-    CARDS_ELE.innerText += ' ' + cards[i] + ' -';
+  CARDS_ELE.innerText = "Tus cartas: ";
+  for (let i = 0; i < cards.length; i++) {
+    CARDS_ELE.innerText += " " + cards[i] + " | ";
   }
 
   SUM_ELE.innerText = "Sum: " + sum;
@@ -32,24 +52,17 @@ function renderGame() {
   } else {
     message = "Perdiste, mejor suerte la proxima! 😭";
     isAlive = false;
+    START_BTN.innerText = "JUGAR DENUEVO";
   }
 
   HEADER_TEXT.innerText = message;
 }
 
 function newCard() {
-    console.log("sacando carta"); 
-    
-    let nextCard = 2; //
-
-    CARDS_ELE.innerText += ' - ' + nextCard;
-     
+  if ((isAlive === true && hasBlackJack === false)) {
+    let nextCard = getRandomCard(); //
     sum += nextCard; //
-    cards.push(nextCard)
-
-    SUM_ELE.innerText = sum; //
-
+    cards.push(nextCard);
     renderGame();
+  }
 }
-
-
