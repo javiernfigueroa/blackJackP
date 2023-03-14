@@ -16,9 +16,11 @@
   <body>
     <div class="game-container">
       <h1 class="game-header">Blackjack</h1>
-      <p class="game-parraph message-el">Quieres jugar una partida?</p>
-      <p class="game-parraph">Cartas:</p>
-      <p class="game-parraph">Suma:</p>
+      <p class="game-parraph" id="message-el">Quieres jugar una partida?</p>
+      <p class="game-parraph" id="cards-el">Cartas:</p>
+      <p class="game-parraph" id="sum-el">Suma:</p>
+      <button class="start-btn" onclick="startGame()">COMENZAR PARTIDA</button>
+      <button class="start-btn" onclick="newCard()">PEDIR CARTA</button>
     </div>
     <script src="index.js"></script>
   </body>

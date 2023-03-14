@@ -6,10 +6,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../BlackJack/img/black.jpg);
+    background-image: url(/img/black.jpg);
     background-size: cover;
     width: 500px;
-    height: 500px;
+    height: 350px;
     margin: 0 auto 0 auto;
     border: 10px solid black;
     border-radius: 20px;
@@ -24,4 +24,14 @@
     color: white;
     font-size: large;
     font-family: 'Rye', cursive;
+}
+
+.start-btn {
+    color: #016f32;
+    width: 150px;
+    background-color: goldenrod;
+    font-family: 'Rye', cursive;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 10px;
 }
