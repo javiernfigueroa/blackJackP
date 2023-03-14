@@ -1,0 +1,27 @@
+.body {
+    margin: 100px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../BlackJack/img/black.jpg);
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto 0 auto;
+    border: 10px solid black;
+    border-radius: 20px;
+}
+
+.game-header {
+    color: goldenrod;
+    font-family: 'Rye', cursive;
+}
+
+.game-parraph {
+    color: white;
+    font-size: large;
+    font-family: 'Rye', cursive;
+}
